@@ -9,7 +9,7 @@ package com.antaev.fhc.autocomplete;
 public final class Autocomplete {
 
     public static int countCharactersToTypeAMessage(String[] words) {
-        ATrie t = new ATrie();
+        Trie t = new Trie();
         int count = 0;
         for (String word : words) {
             t.add(word);

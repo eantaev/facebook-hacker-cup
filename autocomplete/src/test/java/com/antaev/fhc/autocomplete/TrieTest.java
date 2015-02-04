@@ -5,12 +5,12 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class ATrieTest {
-    private ATrie trie;
+public class TrieTest {
+    private Trie trie;
 
     @Before
     public void before() {
-        trie = new ATrie();
+        trie = new Trie();
     }
 
     @Test

@@ -7,7 +7,7 @@ package com.antaev.fhc.autocomplete;
  * @author Evgeny Antaev
  */
 
-class ATrie {
+class Trie {
     private static final int ALPHABET_SIZE = 'z' - 'a' + 1;
     private final Node root = createNode();
 
