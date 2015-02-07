@@ -68,6 +68,10 @@ public final class GiftTree {
             children.add(child);
         }
 
+        public int optimalSelfCost() {
+            return optimalSelfCost;
+        }
+
         private int optimalIfParent(int parentCost) {
             return parentCost == optimalSelfCost ? secondOptimalCost : optimalCost;
         }
@@ -81,9 +85,12 @@ public final class GiftTree {
             }
 
             children.forEach(Node::preCompute);
+
+            int maxSelfCost = children.stream().mapToInt(Node::optimalSelfCost).max().getAsInt() + 1;
+
             optimalCost = Integer.MAX_VALUE;
             secondOptimalCost = Integer.MAX_VALUE;
-            for (int selfCost = 1; selfCost < 6; ++selfCost) {
+            for (int selfCost = 1; selfCost <= maxSelfCost; ++selfCost) {
                 int cost = selfCost;
                 for (Node child : children) {
                     cost += child.optimalIfParent(selfCost);
